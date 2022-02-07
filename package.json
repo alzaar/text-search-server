@@ -1,0 +1,24 @@
+{
+  "name": "text-search-server",
+  "version": "1.0.0",
+  "description": "Text Search Server",
+  "scripts": {
+    "start": "npx nodemon --exec babel-node index.js"
+  },
+  "author": "alzaar",
+  "license": "MIT",
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.16.0",
+    "apollo-server": "^3.6.1",
+    "dotenv": "^14.2.0",
+    "graphql": "^16.2.0",
+    "graphql-tools": "^8.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.7",
+    "@babel/core": "^7.16.7",
+    "@babel/node": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "nodemon": "^2.0.15"
+  }
+}
