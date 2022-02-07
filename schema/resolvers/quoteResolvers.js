@@ -22,6 +22,8 @@ export default {
       const field = Object.keys(args)[0]
       const res = esSerialize.getSerializedResults((await client.search({
         index: process.env.ELASTIC_SEARCH_INDEX,
+        from: args.page,
+        size: QUANTITY_PER_PAGE,
         body: {
           query: {
             query_string: {
