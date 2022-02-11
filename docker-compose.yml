@@ -1,0 +1,19 @@
+version: "3.9"
+  text-search-server:
+    image: node:17-alpine3.14
+    working_dir: /home/server/
+    stdin_open: true # docker run -i - Output serer info
+    tty: true        # docker run -t - Output serer info
+    command: ["npm", "start"]
+    volumes:
+      - ./server:/home/server/
+    ports:
+      - 4000:4000
+    links:
+      - database
+  database:
+    image: elasticsearch:7.17.0
+    ports:
+      - 9200:9200
+    environment:
+      - discovery.type=single-node

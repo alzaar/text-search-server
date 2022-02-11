@@ -2,7 +2,7 @@ import utils from '../../utils'
 import { QUANTITY_PER_PAGE } from '../constants/AppConstants'
 
 const { Client } = require('@elastic/elasticsearch')
-const client = new Client({ node: 'http://localhost:9200' })
+const client = new Client({ node: process.env.DATABASE })
 const esSerialize = new utils.ESSerialize()
 
 export default {
