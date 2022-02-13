@@ -1,4 +1,15 @@
-version: "3.9"
+version: "3.3"
+services:
+  # text-search-app:
+  #   image: node:17-alpine3.14
+  #   working_dir: /home/app/
+  #   command: ["yarn", "start"]
+  #   stdin_open: true # docker run -i - react-script requirements
+  #   tty: true        # docker run -t - react-script requirements
+  #   volumes:
+  #     - ./app:/home/app/
+  #   ports:
+  #     - 3000:3000
   text-search-server:
     image: node:17-alpine3.14
     working_dir: /home/server/
@@ -17,3 +28,7 @@ version: "3.9"
       - 9200:9200
     environment:
       - discovery.type=single-node
+    volumes:
+      - esTextSearch:/usr/share/elasticsearch/data
+volumes:
+  esTextSearch:
